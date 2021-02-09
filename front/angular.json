@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "checkpoint4"
+    }
+  },
+  "defaultProject": "checkpoint4",
+  "cli": {
+    "analytics": "4381a88d-72ab-43d1-8477-36beb7e6e883"
+  }
 }
