@@ -20,4 +20,8 @@ export class HomePageComponent implements OnInit {
   logIn(){
     this.router.navigate(['/login'])
   }
+
+  myList(){
+    this.router.navigate(['/myList'])
+  }
 }
