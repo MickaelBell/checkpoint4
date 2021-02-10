@@ -1,0 +1,31 @@
+<div class="container-fluid p-3">
+  <p>Veuillez renseigner les champs ci-dessous pour créer votre profile</p>
+
+  <form [formGroup]="profileForm" (ngSubmit)="createProfilePArents()">
+
+      <label for="firstname"></label>
+      <input type="text" formControlName="firstname" placeholder="Prénom" >
+      <p>
+        Form Status: {{ profileForm.status }}
+      </p>
+      <label for="lastname"></label>
+      <input type="text" formControlName="lastname" placeholder="Nom">
+      <p>
+        Form Status: {{ profileForm.status }}
+      </p>
+      <label for="childAge"></label>
+      <input type="number" formControlName="childAge" placeholder="Age de l'enfant">
+      <p>
+        Form Status: {{ profileForm.status }}
+      </p>
+      <label for="email"></label>
+      <input type="email" formControlName="email" placeholder="Email">
+      <p>
+        Form Status: {{ profileForm.status }}
+      </p>
+      <button type="submit" [disabled]="!profileForm.valid" class="btn btn-primary" >Envoyer</button>
+
+  </form>
+
+</div>
+
