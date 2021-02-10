@@ -11,6 +11,7 @@ import { MyListPageComponent } from './my-list-page/my-list-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
     NgbModule
   ],

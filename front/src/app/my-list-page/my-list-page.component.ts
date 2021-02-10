@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-list-page',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyListPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  home(){
+    this.router.navigate(['/home'])
+  }
+  listByAge(){
+    this.router.navigate(['/listByAge'])
+  }
 }
