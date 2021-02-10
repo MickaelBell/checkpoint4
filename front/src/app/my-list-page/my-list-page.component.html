@@ -2,6 +2,41 @@
   <p>my-list-page works!</p>
   <p>Ma Liste</p>
   <p>category</p>
+
+
+    <p>Veuillez renseigner les champs ci-dessous pour créer votre liste</p>
+
+    <form [formGroup]="listForm" (ngSubmit)="createList()">
+
+        <label for="name"></label>
+        <input type="text" formControlName="name" placeholder="nom" >
+        <p>
+          Form Status: {{ listForm.status }}
+        </p>
+        <label for="type"></label>
+        <input type="text" formControlName="type" placeholder="type">
+        <p>
+          Form Status: {{ listForm.status }}
+        </p>
+        <label for="minimumAge"></label>
+        <input type="number" formControlName="minimumAge" placeholder="Age minimum de consomation">
+        <p>
+          Form Status: {{ listForm.status }}
+        </p>
+        <label for="consumption"></label>
+        <input type="number" formControlName="consumption" placeholder="durée de consomation">
+        <p>
+          Form Status: {{ listForm.status }}
+        </p>
+        <button type="submit" [disabled]="!listForm.valid" class="btn btn-primary" >Ajouter</button>
+
+    </form>
+    <p>Ma liste</p>
+    <div class="input-group mb-3" *ngFor="let foods of food">
+      <p>{{foods.name}}</p>
+      <button type="button"  class="btn btn-primary" (click)="delete(foods.id)">Suprimer</button>
+    </div>
+
   <div>
     <button  class="btn btn-primary" (click)="home()">Accueil</button>
     <button  class="btn btn-primary" (click)="listByAge()">Choix par age</button>

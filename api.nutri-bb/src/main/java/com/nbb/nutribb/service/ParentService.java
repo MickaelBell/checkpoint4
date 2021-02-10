@@ -23,6 +23,15 @@ public class ParentService {
 		return parentRepository.findAll();
 	}
 	
+	public Boolean deleteProfile(Long id){
+		parentRepository.deleteById(id);
+		return true;
+	}
+
+	public Parent getParentById(Long id){
+		return parentRepository.findById(id).get();
+	}
+	
 	public Parent createProfil(CreateProfilParentDTO dto) {
 		Parent parentProfil = parentMapper.mapCreateProfilParentDtoToEntity(dto);
 		return parentRepository.save(parentProfil);

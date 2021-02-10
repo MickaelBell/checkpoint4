@@ -11,9 +11,9 @@ import { NutriBbService } from 'src/services/nutri-bb.service';
 export class CreateProfilPageComponent implements OnInit {
 
   profileForm = this.fb.group({
-    firstName: ['',Validators.required],
-    lastName: ['',Validators.required],
-    child_age: ['',Validators.required],
+    firstname: ['',Validators.required],
+    lastname: ['',Validators.required],
+    childAge: ['',Validators.required],
     email: ['',Validators.required]
   });
 

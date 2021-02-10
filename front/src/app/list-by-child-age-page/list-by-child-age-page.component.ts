@@ -10,12 +10,13 @@ import { NutriBbService } from 'src/services/nutri-bb.service';
 })
 export class ListByChildAgePageComponent implements OnInit {
 
-  child_age = new FormControl('');
+  child_age = new FormControl('3');
   food;
   constructor(private router: Router, private nutriBbService: NutriBbService) { }
 
   ngOnInit(): void {
     this.getfood();
+    this.child_age.value;
   }
 
   getfood(){
@@ -33,5 +34,7 @@ export class ListByChildAgePageComponent implements OnInit {
   home(){
     this.router.navigate(['/home'])
   }
+ choice(){
 
+ }
 }

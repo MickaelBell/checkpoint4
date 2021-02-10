@@ -5,10 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.nbb.nutribb.DTO.AddFoodDTO;
 import com.nbb.nutribb.entity.Food;
-import com.nbb.nutribb.entity.Parent;
+import com.nbb.nutribb.mapper.FoodMapper;
 import com.nbb.nutribb.repository.FoodRepository;
-import com.nbb.nutribb.repository.ParentRepository;
+
 
 @Service
 public class FoodService {
@@ -17,18 +18,20 @@ public class FoodService {
 	FoodRepository foodRepository;
 	
 	@Autowired
-	ParentRepository parentRepository;
+	FoodMapper foodMapper;
 	
 	public List<Food> getAllFood(){
 		return foodRepository.findAll();
 	}
+	
+	public Food addFood(AddFoodDTO dto) {
+		Food addFood = foodMapper.mapAddFoodDtoToEntity(dto);
+		return foodRepository.save(addFood);
+	}
+	
+	public Boolean deleteFood(Long id){
+		foodRepository.deleteById(id);
+		return true;
+	}
 
-	/*public List<Food> getFoodByAge(Long id){
-		Parent parent = parentRepository.findById(id).orElse(null);
-		
-		if(parent.getChildAge()>= 0) {
-			List<Food> food = foodRepository.findAll();
-			if(food.ge)
-		}
-	}*/
 }

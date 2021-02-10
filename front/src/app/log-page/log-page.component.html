@@ -1,16 +1,15 @@
 <div class="container-fluid p-3">
   <p>Veuillez renseigner les champs ci-dessous pour créer votre profile</p>
 
-  <form [formGroup]="profileForm">
-
+  <div *ngFor="let par of parents">
+    <p>{{par.firstname}}</p>
       <label for="firstname"></label>
-      <input type="text" formControlName="firstName" >
+      <input type="text" [formControl]="firstname" >
 
       <label for="email"></label>
-      <input type="email" formControlName="email" >
+      <input type="email" [formControl]="email" >
 
-      <button type="submit" [disabled]="!profileForm.valid" class="btn btn-primary" (click)="listByAge()">Connecter</button>
+      <button type="submit" [disabled]="!firstname.valid && !email.valid" class="btn btn-primary" (click)="listByAge()">Connecter</button>
 
-  </form>
-
+  </div>
 </div>
